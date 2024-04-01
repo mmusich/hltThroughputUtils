@@ -7,9 +7,14 @@ jobLabel="${2}"
 runNumber=370293
 
 run() {
+  foo=$(printf "%125s") && echo ${foo// /-} && unset foo
+  printf " %s\n" "${3}"
+  foo=$(printf "%125s") && echo ${foo// /-} && unset foo
   rm -rf run"${runNumber}"
   ${2}/benchmark "${1}" -E cmsRun -r 4 -j 8 -t 32 -s 24 -e -1 -g 1 -n --no-cpu-affinity -l "${3}" -k resources.json --tmpdir tmp |& tee "${3}".log
-  ~/scripts/merge.py "${3}"/step*/pid*/resources.json > "${3}".json
+  ./merge_resources_json.py "${3}"/step*/pid*/resources.json > "${3}".json
+  mv "${3}".log "${3}".json "${3}"
+  cp "${1}" "${3}"
 }
 
 https_proxy=http://cmsproxy.cms:3128/ \
@@ -48,5 +53,6 @@ for ntry in {00..02}; do
 done
 unset ntry
 
+rm -rf "${jobLabel}"_{cfg,dump}.py
 rm -rf run"${runNumber}"
 rm -rf __pycache__ tmp
