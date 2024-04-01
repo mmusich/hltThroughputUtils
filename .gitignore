@@ -1,0 +1,7 @@
+*.json
+*.log
+test*/
+patatrack-scripts*/
+*~
+*_cfg.py
+*_dump.py
