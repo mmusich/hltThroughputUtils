@@ -3,6 +3,10 @@
 export SCRAM_ARCH=el8_amd64_gcc12
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 export SITECONFIG_PATH="/opt/offline/SITECONF/local"
+
+kinit $(logname)@CERN.CH
+ssh -f -N -D18081 $(logname)@cmsusr.cms
+
 #[ -d CMSSW_14_0_3 ] || cmsrel CMSSW_14_0_3
 #cd CMSSW_14_0_3/src
 #cmsenv
