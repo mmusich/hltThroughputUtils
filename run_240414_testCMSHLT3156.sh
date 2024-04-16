@@ -32,7 +32,7 @@ process = customizeHLTforThroughputMeasurement(process)
 
 edmConfigDump "${jobLabel}"_cfg.py > "${jobLabel}"_dump.py
 
-for ntry in {00..02}; do
+for ntry in {00..01}; do
 
   jobDirPrefix="${jobLabel}"-"${CMSSW_VERSION}"-"${ntry}"
 
