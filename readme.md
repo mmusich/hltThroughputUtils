@@ -32,7 +32,7 @@
 
 `240422_testCMSHLT3156`
  ```
- ./run_240422_testCMSHLT3156.sh out_240422_testCMSHLT3156_
+ ./run_240422_testCMSHLT3156.sh out_240422_testCMSHLT3156_ee5c719
  ```
  - Same as `240419_testCMSHLT3156`, with small adjustments suggested by Andrea.
      - PS column: same as online (i.e. "2p0E34+HLTPhysics"), with no explicit customisation.
