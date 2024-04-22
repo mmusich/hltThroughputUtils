@@ -25,7 +25,7 @@ cat <<@EOF >> "${jobLabel}"_cfg.py
 
 process.load('run${runNumber}_cff')
 
-from customize_240419_testCMSHLT3156 import customizeHLTforThroughputMeasurement
+from customize_240422_testCMSHLT3156 import customizeHLTforThroughputMeasurement
 process = customizeHLTforThroughputMeasurement(process)
 
 #for producerName, producer in process.producers_().items():

@@ -29,3 +29,15 @@
  - HLT: `/cdaq/physics/Run2024/2e34/v1.0.10/HLT/V3` (V1.0).
  - PS column: "2p0E34".
  - Goal: reproduce HLT-throughput measurement performed online (111 kHz, 190 FUs).
+
+`240422_testCMSHLT3156`
+ ```
+ ./run_240422_testCMSHLT3156.sh out_240422_testCMSHLT3156_
+ ```
+ - Same as `240419_testCMSHLT3156`, with small adjustments suggested by Andrea.
+     - PS column: same as online (i.e. "2p0E34+HLTPhysics"), with no explicit customisation.
+     - `source.maxBufferedFiles = 2` (like online).
+     - Remove L1T-seed changes (should have literally no impact).
+     - Run 379530, LS 465-467 (1800b, Run2024C).
+     - HLT: `/cdaq/physics/Run2024/2e34/v1.0.10/HLT/V3` (V1.0).
+ - Goal: confirm, or not, the results of `240419_testCMSHLT3156`.
