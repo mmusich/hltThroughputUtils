@@ -41,3 +41,13 @@
      - Run 379530, LS 465-467 (1800b, Run2024C).
      - HLT: `/cdaq/physics/Run2024/2e34/v1.0.10/HLT/V3` (V1.0).
  - Goal: confirm, or not, the results of `240419_testCMSHLT3156`.
+
+`240423_testCMSHLT3156`
+ ```
+ ./run_240423_testCMSHLT3156.sh out_240423_testCMSHLT3156_
+ ```
+ - Run 379660, LS 425-430 (1800b, Run2024C).
+ - HLT: `/cdaq/physics/Run2024/2e34/v1.0.10/HLT/V3` (V1.0).
+ - PS column: same as online (i.e. "2p0E34+HLTPhysics"), with no explicit customisation.
+ - `source.maxBufferedFiles = 2` (like online).
+ - Goal: confirm, or not, the results of `240422_testCMSHLT3156`.
