@@ -54,7 +54,7 @@
 
 `240424_testCMSHLT3156`
  ```
- ./run_240424_testCMSHLT3156.sh out_240424_testCMSHLT3156_
+ ./run_240424_testCMSHLT3156.sh out_240424_testCMSHLT3156_624d45b
  ```
  - Run 379866, LS 165-169 (1200b, Run2024C).
  - HLT: `/cdaq/physics/Run2024/2e34/v1.0.10/HLT/V5` (V1.0).
