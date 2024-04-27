@@ -20,7 +20,7 @@ def customizeHLTforThroughputMeasurement(process):
     )
 
     # run over data from run 370293, skimmed with the L1 2024 v0.0.0 menu
-    process.load('run370293_skim_l1t_2024_v0')
+    process.load('run370293_cff')
 
     # create the DAQ working directory for DQMFileSaverPB
     os.makedirs(f'{process.EvFDaqDirector.baseDir.value()}/run{process.EvFDaqDirector.runNumber.value()}', exist_ok=True)

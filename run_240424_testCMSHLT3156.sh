@@ -19,7 +19,7 @@ run() {
 https_proxy=http://cmsproxy.cms:3128/ \
 hltConfigFromDB --runNumber "${runNumber}" > "${jobLabel}"_cfg.py
 
-cp /fff/user/missirol/240419_testCMSHLT3156/hltThroughputUtils/Run379866_HLTPhysics/run"${runNumber}"_cff.py .
+cp /gpu_data/store/data/Run2024C/EphemeralHLTPhysics/FED/run"${runNumber}"_cff.py .
 
 cat <<@EOF >> "${jobLabel}"_cfg.py
 

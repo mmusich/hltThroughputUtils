@@ -20,8 +20,10 @@ run() {
 https_proxy=http://cmsproxy.cms:3128/ \
 hltConfigFromDB --configName "${hltMenu}" > "${jobLabel}"_cfg.py
 
+cp /gpu_data/store/data/Run2023D/ZeroBiasSkimL1Menu_2024_v0_0_0/FED/run"${runNumber}"_cff.py .
+
 cat <<@EOF >> "${jobLabel}"_cfg.py
-from customizeHLTforThroughputMeasurement import customizeHLTforThroughputMeasurement
+from customize_240331_testCMSHLT3156 import customizeHLTforThroughputMeasurement
 process = customizeHLTforThroughputMeasurement(process)
 @EOF
 
