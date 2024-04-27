@@ -16,7 +16,7 @@ hltGetConfiguration "${hltMenu}" \
  > "${jobLabel}"_cfg.py
 
 cat <<@EOF >> "${jobLabel}"_cfg.py
-from customizeHLTforThroughputMeasurement import customizeHLTforThroughputMeasurement
+from customize_240331_testCMSHLT3156 import customizeHLTforThroughputMeasurement
 process = customizeHLTforThroughputMeasurement(process)
 @EOF
 
