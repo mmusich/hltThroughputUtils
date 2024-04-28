@@ -74,7 +74,7 @@
 
 `240428_testCMSHLT3156`
  ```
- ./run_240428_testCMSHLT3156.sh out_240428_testCMSHLT3156_
+ ./run_240428_testCMSHLT3156.sh out_240428_testCMSHLT3156_d86987f
  ```
  - Run 370293, LS 241-242 (2452b, Run2023D).
  - HLT: `/cdaq/physics/Run2023/2e34/v1.2.3/HLT/V3` (same as online).
