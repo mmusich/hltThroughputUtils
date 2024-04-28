@@ -71,3 +71,13 @@
  - PS column: same as online (i.e. "2p0E34+HLTPhysics"), with no explicit customisation.
  - `source.maxBufferedFiles = 2` (like online).
  - Goal: confirm, or not, the results of previous measurements and the online measurement.
+
+`240428_testCMSHLT3156`
+ ```
+ ./run_240428_testCMSHLT3156.sh out_240428_testCMSHLT3156_
+ ```
+ - Run 370293, LS 241-242 (2452b, Run2023D).
+ - HLT: `/cdaq/physics/Run2023/2e34/v1.2.3/HLT/V3` (same as online).
+ - PS column: same as online (i.e. "2p0E34+HLTPhysics"), with no explicit customisation.
+ - `source.maxBufferedFiles = 2` (like online).
+ - Goal: compare to the values observed online in 2023.
