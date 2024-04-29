@@ -1,5 +1,50 @@
-./run_240331.sh /users/missirol/test/dev/CMSSW_14_0_0/tmp/240331_ThroughputMeasurements/TimingTest_01/GRun/V3 test240331_GRunV79
 
+Setup instructions
+==================
+
+The instructions are work in progress.
+```bash
+ssh hilton-c2b02-44-01
+```
+
+```bash
+dirName=MY_TEST_DIR
+cmsswRel=CMSSW_14_0_5_patch1
+
+export SCRAM_ARCH=el8_amd64_gcc12
+source /cvmfs/cms.cern.ch/cmsset_default.sh
+export SITECONFIG_PATH="/opt/offline/SITECONF/local"
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+kinit $(logname)@CERN.CH
+ssh -f -N -D18081 $(logname)@cmsusr.cms
+
+mkdir -p /fff/user/"${USER}"/"${dirName}"
+cd /fff/user/"${USER}"/"${dirName}"
+
+cmsrel "${cmsswRel}"
+cd "${cmsswRel}"/src
+cmsenv
+scram b
+cd "${OLDPWD}"
+
+git clone git@github.com:missirol/hltThroughputUtils.git -o missirol -b master
+
+cd hltThroughputUtils
+
+git clone git@github.com:missirol/patatrack-scripts.git -o missirol -b master                 -- patatrack-scripts
+git clone git@github.com:missirol/patatrack-scripts.git -o missirol -b hilton-c2b02-44-01_cpu -- patatrack-scripts.cpu
+git clone git@github.com:missirol/patatrack-scripts.git -o missirol -b hilton-c2b02-44-01_gpu -- patatrack-scripts.gpu
+```
+
+Measurements
+============
+
+```
+./run_240331.sh /users/missirol/test/dev/CMSSW_14_0_0/tmp/240331_ThroughputMeasurements/TimingTest_01/GRun/V3 test240331_GRunV79
+```
 
 `240414_testCMSHLT3156`
  ```
