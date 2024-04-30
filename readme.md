@@ -129,7 +129,7 @@ Measurements
 
 `240430_testCMSHLT3156`
  ```
- ./run_240430_testCMSHLT3156.sh out_240430_testCMSHLT3156_
+ ./run_240430_testCMSHLT3156.sh out_240430_testCMSHLT3156_e1375f2
  ```
  - Run 380030, LS 112-116 (2200b, Run2024C).
  - HLT: `/cdaq/physics/Run2024/2e34/v1.0.11/HLT/V2` (V1.0).
