@@ -136,10 +136,12 @@ Measurements
  - PS column: same as online (i.e. "2p0E34+HLTPhysics"), with no explicit customisation.
  - `source.maxBufferedFiles = 2` (like online).
  - Goal: estimate impact of using hyper-threading in HLT-throughput measurements.
+   - no explicit disabling of hyper-threading,
+     just measurements with different number of jobs/threads/streams
 
 `240501_testCMSHLT3156`
  ```
- ./run_240501_testCMSHLT3156.sh out_240501_testCMSHLT3156_
+ ./run_240501_testCMSHLT3156.sh out_240501_testCMSHLT3156_00fb1f1
  ```
  - Run 380030, LS 112-116 (2200b, Run2024C).
  - HLT: `/cdaq/physics/Run2024/2e34/v1.0.11/HLT/V2` (V1.0).
@@ -148,3 +150,5 @@ Measurements
  - Goal: estimate impact of using hyper-threading in HLT-throughput measurements.
  - Different benchmark settings compared to "240430_testCMSHLT3156".
    - vanilla patatrack-scripts
+   - no explicit disabling of hyper-threading,
+     just measurements with different number of jobs/threads/streams
