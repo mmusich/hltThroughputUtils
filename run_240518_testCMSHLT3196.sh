@@ -23,7 +23,11 @@ hltConfigFromDB --runNumber "${runNumber}" > "${jobLabel}"_cfg.py
 
 cp /gpu_data/store/data/Run2024D/EphemeralHLTPhysics/FED/run"${runNumber}"_cff.py .
 
-for jobSubLabel in baseline CCCLooseInAll CCCLooseInSiStripUnpacker CCCLooseInRefToPSet; do
+# ensure MPS is disabled at the start
+./stop-mps-daemon.sh
+
+#for jobSubLabel in baseline CCCLooseInAll CCCLooseInSiStripUnpacker CCCLooseInRefToPSetSubsetA CCCLooseInRefToPSetSubsetB; do
+for jobSubLabel in CCCLooseInRefToPSetSubsetB; do
 
   ### Intermediate configuration file
   cat <<@EOF >> "${jobLabel}"_cfg.py

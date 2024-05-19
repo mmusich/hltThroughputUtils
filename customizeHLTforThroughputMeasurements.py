@@ -1,4 +1,5 @@
 import FWCore.ParameterSet.Config as cms
+import fnmatch
 
 def customizeHLTforThroughputMeasurements(process):
     # remove check on timestamp of online-beamspot payloads
@@ -33,7 +34,7 @@ def customizeHLTforCMSHLT3196_CCCLooseInSiStripUnpacker(process):
     process.hltSiStripRawToClustersFacility.Clusterizer.clusterChargeCut.refToPSet_ = 'HLTSiStripClusterChargeCutLoose'
     return process
 
-def customizeHLTforCMSHLT3196_CCCLooseInRefToPSet(process):
+def customizeHLTforCMSHLT3196_CCCLooseInRefToPSetSubset(process, moduleList):
     process = customizeHLTforThroughputMeasurements(process)
 
     def updateRefToPSet(module):
@@ -61,11 +62,35 @@ def customizeHLTforCMSHLT3196_CCCLooseInRefToPSet(process):
         process.switchProducers_(),
     ]:
         for moduleLabel_i in moduleDict:
-            try:
-                if getattr(process, moduleLabel_i).type_() == 'SiStripClusterizerFromRaw':
-                    continue
-            except:
-                pass
-            updateRefToPSet(getattr(process, moduleLabel_i))
+            keepModule = True
+            for (modulePattern_j, keepModule_j) in moduleList:
+                if fnmatch.fnmatch(moduleLabel_i, modulePattern_j):
+                    keepModule = keepModule_j
+            if keepModule:
+                updateRefToPSet(getattr(process, moduleLabel_i))
 
+    return process
+
+def customizeHLTforCMSHLT3196_CCCLooseInRefToPSetSubsetA(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    process = customizeHLTforCMSHLT3196_CCCLooseInRefToPSetSubset(process, [
+        ('*', True),
+        ('hltSiStripRawToClustersFacility', False),
+    ])
+    return process
+
+def customizeHLTforCMSHLT3196_CCCLooseInRefToPSetSubsetB(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    process = customizeHLTforCMSHLT3196_CCCLooseInRefToPSetSubset(process, [
+        ('*', False),
+        ('HLTIter1PSetTrajectoryFilterIT', True),
+        ('HLTIter2PSetTrajectoryFilterIT', True),
+        ('HLTIter4PSetTrajectoryFilterIT', True),
+        ('HLTPSetMuonCkfTrajectoryFilter', True),
+        ('hltDisplacedhltIter4PixelLessLayerTriplets', True),
+        ('hltDisplacedhltIter4PixelLessLayerTripletsForDisplacedTkMuons', True),
+        ('hltDisplacedhltIter4PixelLessLayerTripletsForGlbDisplacedMuons', True),
+        ('hltDisplacedhltIter4PixelLessLayerTripletsForTau', True),
+        ('hltMixedLayerPairs', True),
+    ])
     return process
