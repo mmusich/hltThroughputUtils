@@ -170,3 +170,9 @@ Measurements
    - `CCCLooseInAll`: CCCNone set to 1620 (affecting every module using CCCNone).
    - `CCCLooseInSiStripUnpacker`: CCCLoose in `SiStripClusterizerFromRaw`.
    - `CCCLooseInRefToPSet`: CCCLoose in all `refToPSet_` using CCCNone except for `SiStripClusterizerFromRaw`.
+
+ ```
+ ./run_240518_testCMSHLT3196.sh out_240518_testCMSHLT3196_b44dc75
+ ```
+ - To test one more case ("CCCLooseInRefToPSetSubsetB"), where CCC is changed from None to Loose
+   only in a small arbitrary subset of modules not used in "standard" triggers.
