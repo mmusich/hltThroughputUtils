@@ -9,7 +9,7 @@ ssh hilton-c2b02-44-01
 
 ```bash
 dirName=MY_TEST_DIR
-cmsswRel=CMSSW_14_0_5_patch1
+cmsswRel=CMSSW_14_0_6_MULTIARCHS
 
 export SCRAM_ARCH=el8_amd64_gcc12
 source /cvmfs/cms.cern.ch/cmsset_default.sh
@@ -152,3 +152,21 @@ Measurements
    - vanilla patatrack-scripts
    - no explicit disabling of hyper-threading,
      just measurements with different number of jobs/threads/streams
+
+`240518_testCMSHLT3196`
+ ```
+ ./run_240518_testCMSHLT3196.sh out_240518_testCMSHLT3196_8308aec
+ ```
+ - Goal: test impact of possible changes discussed in CMSHLT-3196.
+ - Run 380647, LS 191-194 (2340b, Run2024D).
+ - Machine: `hilton-c2b02-44-01`.
+ - Settings as close as possible to online.
+   - HLT menu: same as online, i.e. `/cdaq/physics/Run2024/2e34/v1.1.4/HLT/V1`.
+   - PS column: same as online, i.e. "1p8E34+ZeroBias+HLTPhysics" (no explicit customisation).
+   - `source.maxBufferedFiles = 2`.
+   - MPS enabled, multi-threading enabled.
+   - Explicit GPU assignment to NUMA domains (modified version of patatrack-scripts).
+ - 3 configurations tested in addition to baseline (see `customizeHLTforThroughputMeasurements.py`).
+   - `CCCLooseInAll`: CCCNone set to 1620 (affecting every module using CCCNone).
+   - `CCCLooseInSiStripUnpacker`: CCCLoose in `SiStripClusterizerFromRaw`.
+   - `CCCLooseInRefToPSet`: CCCLoose in all `refToPSet_` using CCCNone except for `SiStripClusterizerFromRaw`.
