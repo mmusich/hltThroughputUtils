@@ -26,8 +26,7 @@ cp /gpu_data/store/data/Run2024D/EphemeralHLTPhysics/FED/run"${runNumber}"_cff.p
 # ensure MPS is disabled at the start
 ./stop-mps-daemon.sh
 
-#for jobSubLabel in baseline CCCLooseInAll CCCLooseInSiStripUnpacker CCCLooseInRefToPSetSubsetA CCCLooseInRefToPSetSubsetB; do
-for jobSubLabel in CCCLooseInRefToPSetSubsetB; do
+for jobSubLabel in baseline CCCLooseInAll CCCLooseInSiStripUnpacker CCCLooseInRefToPSetSubsetA CCCLooseInRefToPSetSubsetB; do
 
   ### Intermediate configuration file
   cat <<@EOF >> "${jobLabel}"_cfg.py
