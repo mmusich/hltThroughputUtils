@@ -38,7 +38,7 @@ def customizeHLTforCMSHLT3196_CCCLooseInRefToPSetSubset(process, moduleList):
     process = customizeHLTforThroughputMeasurements(process)
 
     def updateRefToPSet(module):
-        ret = []
+        ret = 0
         for parName in module.parameterNames_():
             param = getattr(module, parName)
             if isinstance(param, cms.VPSet):
@@ -48,6 +48,7 @@ def customizeHLTforCMSHLT3196_CCCLooseInRefToPSetSubset(process, moduleList):
                 ret += updateRefToPSet(param)
             elif parName == 'refToPSet_':
                 if param.value() == 'HLTSiStripClusterChargeCutNone':
+                    ret += 1
                     setattr(module, parName, 'HLTSiStripClusterChargeCutLoose')
         return ret
 
@@ -66,8 +67,11 @@ def customizeHLTforCMSHLT3196_CCCLooseInRefToPSetSubset(process, moduleList):
             for (modulePattern_j, keepModule_j) in moduleList:
                 if fnmatch.fnmatch(moduleLabel_i, modulePattern_j):
                     keepModule = keepModule_j
+            nChanges = 0
             if keepModule:
-                updateRefToPSet(getattr(process, moduleLabel_i))
+                nChanges = updateRefToPSet(getattr(process, moduleLabel_i))
+#            if nChanges > 0:
+#                print('XXX', moduleLabel_i)
 
     return process
 

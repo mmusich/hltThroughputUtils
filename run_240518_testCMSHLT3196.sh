@@ -29,7 +29,8 @@ cp /gpu_data/store/data/Run2024D/EphemeralHLTPhysics/FED/run"${runNumber}"_cff.p
 for jobSubLabel in baseline CCCLooseInAll CCCLooseInSiStripUnpacker CCCLooseInRefToPSetSubsetA CCCLooseInRefToPSetSubsetB; do
 
   ### Intermediate configuration file
-  cat <<@EOF >> "${jobLabel}"_cfg.py
+  cp "${jobLabel}"_cfg.py tmp.py
+  cat <<@EOF >> tmp.py
 
 process.load('run${runNumber}_cff')
 
@@ -38,7 +39,8 @@ process = customizeHLTforCMSHLT3196_${jobSubLabel}(process)
 @EOF
 
   ### Final configuration file (dump)
-  edmConfigDump "${jobLabel}"_cfg.py > "${jobLabel}"_"${jobSubLabel}"_dump.py
+  edmConfigDump tmp.py > "${jobLabel}"_"${jobSubLabel}"_dump.py
+  rm -rf tmp.py
 
   ### Throughput measurements (benchmark)
   for ntry in {00..01}; do
