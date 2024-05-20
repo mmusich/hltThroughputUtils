@@ -26,7 +26,7 @@ cp /gpu_data/store/data/Run2024D/EphemeralHLTPhysics/FED/run"${runNumber}"_cff.p
 # ensure MPS is disabled at the start
 ./stop-mps-daemon.sh
 
-for jobSubLabel in baseline CCCLooseInAll CCCLooseInSiStripUnpacker CCCLooseInRefToPSetSubsetA CCCLooseInRefToPSetSubsetB; do
+for jobSubLabel in baseline CCCLooseInAll CCCLooseInSiStripUnpacker CCCLooseInRefToPSetSubsetA CCCLooseInRefToPSetSubsetB CCCLooseInRefToPSetSubsetC; do
 
   ### Intermediate configuration file
   cp "${jobLabel}"_cfg.py tmp.py
@@ -43,7 +43,7 @@ process = customizeHLTforCMSHLT3196_${jobSubLabel}(process)
   rm -rf tmp.py
 
   ### Throughput measurements (benchmark)
-  for ntry in {00..01}; do
+  for ntry in {00..00}; do
 
     jobDirPrefix="${jobLabel}"-"${jobSubLabel}"-"${CMSSW_VERSION}"-"${ntry}"
 

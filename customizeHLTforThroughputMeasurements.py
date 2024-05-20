@@ -98,3 +98,11 @@ def customizeHLTforCMSHLT3196_CCCLooseInRefToPSetSubsetB(process):
         ('hltMixedLayerPairs', True),
     ])
     return process
+
+def customizeHLTforCMSHLT3196_CCCLooseInRefToPSetSubsetC(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    process = customizeHLTforCMSHLT3196_CCCLooseInRefToPSetSubset(process, [
+        ('*', False),
+        ('HLTPSetTrajectoryFilterForElectrons', True),
+    ])
+    return process
