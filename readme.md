@@ -155,7 +155,7 @@ Measurements
 
 `240518_testCMSHLT3196`
  ```
- ./run_240518_testCMSHLT3196.sh out_240518_testCMSHLT3196_8308aec
+ ./run_240518_testCMSHLT3196.sh out_240518_testCMSHLT3196_806c8ba
  ```
  - Goal: test impact of possible changes discussed in CMSHLT-3196.
  - Run 380647, LS 191-194 (2340b, Run2024D).
@@ -166,13 +166,9 @@ Measurements
    - `source.maxBufferedFiles = 2`.
    - MPS enabled, multi-threading enabled.
    - Explicit GPU assignment to NUMA domains (modified version of patatrack-scripts).
- - 3 configurations tested in addition to baseline (see `customizeHLTforThroughputMeasurements.py`).
+ - 4 configurations tested in addition to baseline (see `customizeHLTforThroughputMeasurements.py`).
    - `CCCLooseInAll`: CCCNone set to 1620 (affecting every module using CCCNone).
    - `CCCLooseInSiStripUnpacker`: CCCLoose in `SiStripClusterizerFromRaw`.
-   - `CCCLooseInRefToPSet`: CCCLoose in all `refToPSet_` using CCCNone except for `SiStripClusterizerFromRaw`.
-
- ```
- ./run_240518_testCMSHLT3196.sh out_240518_testCMSHLT3196_b44dc75
- ```
- - To test one more case ("CCCLooseInRefToPSetSubsetB"), where CCC is changed from None to Loose
-   only in a small arbitrary subset of modules not used in "standard" triggers.
+   - `CCCLooseInRefToPSetSubsetA`: CCCLoose in all `refToPSet_` using CCCNone except for `SiStripClusterizerFromRaw`.
+   - `CCCLooseInRefToPSetSubsetB`: CCCLoose only in a small arbitrary subset of modules not used in "standard" triggers.
+   - `CCCLooseInRefToPSetSubsetC`: CCCLoose only in `HLTPSetTrajectoryFilterForElectrons`.
