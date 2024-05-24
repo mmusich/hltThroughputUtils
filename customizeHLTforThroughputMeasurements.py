@@ -106,3 +106,16 @@ def customizeHLTforCMSHLT3196_CCCLooseInRefToPSetSubsetC(process):
         ('HLTPSetTrajectoryFilterForElectrons', True),
     ])
     return process
+
+def customizeHLTforCMSHLT3212_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    return process
+
+def customizeHLTforCMSHLT3212_target(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    process.hltL1sDSTRun3DoubleMuonPFScoutingPixelTracking.L1SeedsLogicalExpression = \
+        process.hltL1sDSTRun3DoubleMuonPFScoutingPixelTracking.L1SeedsLogicalExpression.value().replace(
+            'L1_DoubleMu6_Upt6_SQ_er2p0 OR L1_DoubleMu7_Upt7_SQ_er2p0 OR L1_DoubleMu8_Upt8_SQ_er2p0',
+            'L1_DoubleMu0_Upt6_SQ_er2p0 OR L1_DoubleMu0_Upt7_SQ_er2p0 OR L1_DoubleMu0_Upt8_SQ_er2p0'
+        )
+    return process

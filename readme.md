@@ -172,3 +172,17 @@ Measurements
    - `CCCLooseInRefToPSetSubsetA`: CCCLoose in all `refToPSet_` using CCCNone except for `SiStripClusterizerFromRaw`.
    - `CCCLooseInRefToPSetSubsetB`: CCCLoose only in a small arbitrary subset of modules not used in "standard" triggers.
    - `CCCLooseInRefToPSetSubsetC`: CCCLoose only in `HLTPSetTrajectoryFilterForElectrons`.
+
+`240524_testCMSHLT3212`
+ ```
+ ./run_240524_testCMSHLT3212.sh out_240524_testCMSHLT3212_
+ ```
+ - Goal: test impact of changes discussed in CMSHLT-3212.
+ - Run 380647, LS 191-194 (2340b, Run2024D).
+ - Machine: `hilton-c2b02-44-01`.
+ - Settings as close as possible to online.
+   - HLT menu: same as online, i.e. `/cdaq/physics/Run2024/2e34/v1.1.4/HLT/V1`.
+   - PS column: same as online, i.e. "1p8E34+ZeroBias+HLTPhysics" (no explicit customisation).
+   - `source.maxBufferedFiles = 2`.
+   - MPS enabled, multi-threading enabled.
+   - Explicit GPU assignment to NUMA domains (modified version of patatrack-scripts).
