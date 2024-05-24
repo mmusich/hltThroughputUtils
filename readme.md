@@ -175,7 +175,7 @@ Measurements
 
 `240524_testCMSHLT3212`
  ```
- ./run_240524_testCMSHLT3212.sh out_240524_testCMSHLT3212_
+ ./run_240524_testCMSHLT3212.sh out_240524_testCMSHLT3212_437aa2c
  ```
  - Goal: test impact of changes discussed in CMSHLT-3212.
  - Run 380647, LS 191-194 (2340b, Run2024D).
