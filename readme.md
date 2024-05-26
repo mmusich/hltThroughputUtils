@@ -173,6 +173,15 @@ Measurements
    - `CCCLooseInRefToPSetSubsetB`: CCCLoose only in a small arbitrary subset of modules not used in "standard" triggers.
    - `CCCLooseInRefToPSetSubsetC`: CCCLoose only in `HLTPSetTrajectoryFilterForElectrons`.
 
+ ```
+ ./run_240518_testCMSHLT3196.sh out_240518_testCMSHLT3196_87d5ce4
+ ```
+ - Tested 3 more variants, now based on modifying the ESProducers of type Chi2ChargeMeasurementEstimatorESProducer.
+   - `CCCLooseInRefToPSetSubsetD`: muons.
+   - `CCCLooseInRefToPSetSubsetE`: muons and electrons.
+   - `CCCLooseInRefToPSetSubsetF`: muons, electrons and else.
+   - For further details, see CMSHLT-3196.
+
 `240524_testCMSHLT3212`
  ```
  ./run_240524_testCMSHLT3212.sh out_240524_testCMSHLT3212_437aa2c
