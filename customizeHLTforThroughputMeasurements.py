@@ -170,3 +170,47 @@ def customizeHLTforCMSHLT3137_test11(process):
 #    process.EvFDaqDirector.runNumber = 0
 
     return process
+
+def customizeHLTforCMSHLT3137_test12(process):
+    process = customizeHLTforCMSHLT3137_test11(process)
+    process.source.eventChunkSize = 200
+    process.source.eventChunkBlock = 200
+    process.source.numBuffers = 4
+    process.source.maxBufferedFiles = 2
+    process.options.numberOfConcurrentLuminosityBlocks = 2
+    return process
+
+def customizeHLTforCMSHLT3137_test13(process):
+    process = customizeHLTforCMSHLT3137_test12(process)
+    process.options.wantSummary = False
+    return process
+
+def customizeHLTforCMSHLT3137_test14(process):
+    process = customizeHLTforCMSHLT3137_test13(process)
+    process.FastTimerService.enableDQMbyModule = False
+    process.FastTimerService.enableDQMbyPath = False
+    process.FastTimerService.enableDQMbyProcesses = True
+    return process
+
+def customizeHLTforCMSHLT3137_test15(process):
+    process = customizeHLTforCMSHLT3137_test14(process)
+    for msgLoggerVar in [
+        'FastReport',
+        'HLTrigReport',
+        'L1GtTrigReport',
+        'L1TGlobalSummary',
+        'ThroughputService',
+        'TriggerSummaryProducerAOD',
+    ]:
+        if hasattr(process.MessageLogger, msgLoggerVar):
+            process.MessageLogger.__delattr__(msgLoggerVar)
+    return process
+
+def customizeHLTforCMSHLT3137_test16(process):
+    process = customizeHLTforCMSHLT3137_test15(process)
+    for modLabel in [
+        'dqmOutput',
+    ]:
+        if hasattr(process, modLabel):
+            process.__delattr__(modLabel)
+    return process
