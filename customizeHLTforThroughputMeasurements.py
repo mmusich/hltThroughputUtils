@@ -152,3 +152,21 @@ def customizeHLTforCMSHLT3212_target(process):
             'L1_DoubleMu0_Upt6_SQ_er2p0 OR L1_DoubleMu0_Upt7_SQ_er2p0 OR L1_DoubleMu0_Upt8_SQ_er2p0'
         )
     return process
+
+def customizeHLTforCMSHLT3137_test11(process):
+    process = customizeHLTforThroughputMeasurements(process)
+
+    # same settings as the timing server
+    process.source.eventChunkSize = 240
+    process.source.eventChunkBlock = 240
+    process.source.numBuffers = 8
+    process.source.maxBufferedFiles = 8
+
+    # same settings as the timing server (should correspond to 2)
+    # https://github.com/cms-sw/cmssw/blob/774f85421329c42cd1d30ec43d470f527141fb92/FWCore/ParameterSet/src/validateTopLevelParameterSets.cc#L31
+    process.options.numberOfConcurrentLuminosityBlocks = 0
+
+#    # same settings as the timing server
+#    process.EvFDaqDirector.runNumber = 0
+
+    return process

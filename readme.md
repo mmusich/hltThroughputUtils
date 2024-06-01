@@ -195,3 +195,17 @@ Measurements
    - `source.maxBufferedFiles = 2`.
    - MPS enabled, multi-threading enabled.
    - Explicit GPU assignment to NUMA domains (modified version of patatrack-scripts).
+
+`240601_testCMSHLT3137`
+ ```
+ ./run_240601_testCMSHLT3137.sh out_240601_testCMSHLT3137_
+ ```
+ - Goal: understand differences between manual measurements and timing-server measurements.
+ - Run 381065, LS 449-458 (2340b, Run2024E).
+ - Machines: `hilton-c2b02-44-01` or `srv-b1b07-16-01`.
+ - Settings.
+   - HLT menu: same as online, i.e. `/cdaq/physics/Run2024/2e34/v1.2.1/HLT/V1`.
+   - PS column: same as online, i.e. `2p0E34+ZeroBias+HLTPhysics` (no explicit customisation).
+   - Source settings as in the timing-server configuration (e.g. `source.maxBufferedFiles = 8`).
+   - With and without MPS (multi-threading enabled).
+   - No explicit GPU assignment to NUMA domains (vanilla version of patatrack-scripts).
