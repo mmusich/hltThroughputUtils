@@ -198,7 +198,7 @@ Measurements
 
 `240601_testCMSHLT3137`
  ```
- ./run_240601_testCMSHLT3137.sh out_240601_testCMSHLT3137_
+ ./run_240601_testCMSHLT3137.sh out_240601_testCMSHLT3137_ef868c8
  ```
  - Goal: understand differences between manual measurements and timing-server measurements.
  - Run 381065, LS 449-458 (2340b, Run2024E).
