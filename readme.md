@@ -209,3 +209,10 @@ Measurements
    - Source settings as in the timing-server configuration (e.g. `source.maxBufferedFiles = 8`).
    - With and without MPS (multi-threading enabled).
    - No explicit GPU assignment to NUMA domains (vanilla version of patatrack-scripts).
+
+`240602_testCMSHLT3137`
+ ```
+ ./run_240602_testCMSHLT3137.sh out_240602_testCMSHLT3137_200061d
+ ```
+ - Goal: try and reproduce the values returned by the timing server, using the same exact cfg as the timing server.
+ - Applied a series of customisations to understand if any of these lead to any significant slowdown.
