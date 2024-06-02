@@ -6,3 +6,4 @@ patatrack-scripts*/
 *_cfg.py
 *_dump.py
 out*/
+*_hlt_customised.py

@@ -42,6 +42,7 @@ https_proxy=http://cmsproxy.cms:3128/ \
 #hltConfigFromDB --runNumber "${runNumber}" > "${jobLabel}"_cfg.py
 #cp /gpu_data/store/data/Run2024E/EphemeralHLTPhysics/FED/run"${runNumber}"_cff.py .
 
+# config dump from /eos/cms/store/group/tsg/STEAM/timing_server/results/prod/missirol/CMSSW_14_0_7_patch1_MULTIARCHS_240601_testCMSHLT3137_test11_try0.20240601_101913
 cp missirol_CMSSW_14_0_7_patch1_MULTIARCHS_240601_testCMSHLT3137_test11_try0__20240601_101913_hlt_customised.py "${jobLabel}"_cfg.py
 
 # ensure MPS is disabled at the start
