@@ -219,7 +219,7 @@ Measurements
 
 `240608_testCMSHLT3232`
  ```
- ./run_240608_testCMSHLT3232.sh out_240608_testCMSHLT3232_
+ ./run_240608_testCMSHLT3232.sh out_240608_testCMSHLT3232_80451cb
  ```
  - Goal: try and reproduce the values returned by the timing server.
  - "test01": standard measurement, to be compared to the timing server
