@@ -216,3 +216,11 @@ Measurements
  ```
  - Goal: try and reproduce the values returned by the timing server, using the same exact cfg as the timing server.
  - Applied a series of customisations to understand if any of these lead to any significant slowdown.
+
+`240608_testCMSHLT3232`
+ ```
+ ./run_240608_testCMSHLT3232.sh out_240608_testCMSHLT3232_
+ ```
+ - Goal: try and reproduce the values returned by the timing server.
+ - "test01": standard measurement, to be compared to the timing server
+   (applying a customisation function to the config used by the timing server).

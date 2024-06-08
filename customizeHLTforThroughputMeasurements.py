@@ -214,3 +214,7 @@ def customizeHLTforCMSHLT3137_test16(process):
         if hasattr(process, modLabel):
             process.__delattr__(modLabel)
     return process
+
+def customizeHLTforCMSHLT3232_test01(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    return process
