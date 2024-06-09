@@ -220,7 +220,11 @@ Measurements
 `240608_testCMSHLT3232`
  ```
  ./run_240608_testCMSHLT3232.sh out_240608_testCMSHLT3232_80451cb
+ ./run_240608_testCMSHLT3232_timingServerCfg.sh out_240608_testCMSHLT3232_80451cb_timingServerCfg_nowarmup
  ```
  - Goal: try and reproduce the values returned by the timing server.
  - "test01": standard measurement, to be compared to the timing server
    (applying a customisation function to the config used by the timing server).
+ - "timingServerCfg" uses directly a cfg taken from the timing server outputs
+   (in this particular case, the timing-server scripts was modified in order
+   not to edit the configuration parameters of the FastTimerService)
