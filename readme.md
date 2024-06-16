@@ -228,3 +228,10 @@ Measurements
  - "timingServerCfg" uses directly a cfg taken from the timing server outputs
    (in this particular case, the timing-server scripts was modified in order
    not to edit the configuration parameters of the FastTimerService)
+
+ ```
+ ./run_240608_testCMSHLT3232_timingServerCfg_srv-b1b07-16-01.sh out_240608_testCMSHLT3232_80451cb_timingServerCfg_nowarmup_nvidiaPersistenceOn_squidOn
+ ```
+ - Measurement on srv-b1b07-16-01 after activating the squid service (Jun-10, 2024).
+ - No visible impact on HLT throughput.
+   - Unclear to me if the services `frontier-squid` on `hilton-c2b02-44-01` and `squid` on `srv-b1b07-16-01` are equivalent.
