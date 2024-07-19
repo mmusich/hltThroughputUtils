@@ -238,7 +238,9 @@ Measurements
 
 `240719_testCMSHLT3288`
  ```
- ./run_240719_testCMSHLT3288.sh out_240719_testCMSHLT3288_
+ ./run_240719_testCMSHLT3288.sh out_240719_testCMSHLT3288_1a6b65d
  ```
  - Goal: quantify impact of CMSHLT-3288.
  - Input sample: run-383363, LS 193-196 (PU ~64).
+ - Menu: same as used in run-383363 (i.e. `/cdaq/physics/Run2024/2e34/v1.3.0/HLT/V3`).
+ - NVIDIA MPS enabled.
