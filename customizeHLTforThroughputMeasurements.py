@@ -218,3 +218,17 @@ def customizeHLTforCMSHLT3137_test16(process):
 def customizeHLTforCMSHLT3232_test01(process):
     process = customizeHLTforThroughputMeasurements(process)
     return process
+
+def customizeHLTforCMSHLT3288_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    return process
+
+def customizeHLTforCMSHLT3288_test01(process):
+    process = customizeHLTforCMSHLT3288_baseline(process)
+    layerPairs = [
+        'BPix1+BPix2', 'BPix2+FPix1_pos', 'BPix2+FPix1_neg', 'FPix1_pos+FPix2_pos', 'FPix1_neg+FPix2_neg',
+        'BPix1+FPix2_neg', 'BPix2+FPix2_neg', 'FPix2_neg+FPix3_neg', 'BPix2+BPix3',
+    ]
+    process.hltDoubletRecoveryPixelLayersAndRegions.layerList = layerPairs[:]
+    process.hltDoubletRecoveryPixelLayersAndRegionsSerialSync.layerList = layerPairs[:]
+    return process

@@ -235,3 +235,10 @@ Measurements
  - Measurement on srv-b1b07-16-01 after activating the squid service (Jun-10, 2024).
  - No visible impact on HLT throughput.
    - Unclear to me if the services `frontier-squid` on `hilton-c2b02-44-01` and `squid` on `srv-b1b07-16-01` are equivalent.
+
+`240719_testCMSHLT3288`
+ ```
+ ./run_240719_testCMSHLT3288.sh out_240719_testCMSHLT3288_
+ ```
+ - Goal: quantify impact of CMSHLT-3288.
+ - Input sample: run-383363, LS 193-196 (PU ~64).
