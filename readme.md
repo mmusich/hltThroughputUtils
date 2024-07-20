@@ -244,3 +244,13 @@ Measurements
  - Input sample: run-383363, LS 193-196 (PU ~64).
  - Menu: same as used in run-383363 (i.e. `/cdaq/physics/Run2024/2e34/v1.3.0/HLT/V3`).
  - NVIDIA MPS enabled.
+
+`240720_testCMSHLT3288`
+ ```
+ ./run_240720_testCMSHLT3288.sh out_240720_testCMSHLT3288_
+ ```
+ - Goal: quantify impact of CMSHLT-3288 on latest GRun menu (candidate v1.4 menu).
+ - Same as `240720_testCMSHLT3288`, except for the HLT menu used.
+ - HLT menu: `/users/missirol/test/dev/CMSSW_14_0_0/CMSHLT_3288/Ref01/HLT/V1`
+   (online GRun menu derived from `/dev/CMSSW_14_0_0/HLT/V187`
+   without CICADA-related triggers in order not to break compatibility with the L1T menu used in run-38363).
