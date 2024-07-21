@@ -258,7 +258,7 @@ Measurements
 
 `240721_testCMSHLT3288`
  ```
- ./run_240721_testCMSHLT3288.sh out_240721_testCMSHLT3288_
+ ./run_240721_testCMSHLT3288.sh out_240721_testCMSHLT3288_60d95b7
  ```
  - Goal: quantify impact of CMSHLT-3288 on a recent GRun menu before HCAL-Alpaka updates.
  - Same as `240720_testCMSHLT3288`, except for the HLT menu used.
