@@ -247,10 +247,22 @@ Measurements
 
 `240720_testCMSHLT3288`
  ```
- ./run_240720_testCMSHLT3288.sh out_240720_testCMSHLT3288_
+ ./run_240720_testCMSHLT3288.sh out_240720_testCMSHLT3288_3938330
  ```
  - Goal: quantify impact of CMSHLT-3288 on latest GRun menu (candidate v1.4 menu).
- - Same as `240720_testCMSHLT3288`, except for the HLT menu used.
- - HLT menu: `/users/missirol/test/dev/CMSSW_14_0_0/CMSHLT_3288/Ref01/HLT/V1`
+ - Same as `240719_testCMSHLT3288`, except for the HLT menu used.
+ - HLT menu: `/users/missirol/test/dev/CMSSW_14_0_0/CMSHLT_3288/Ref01/HLT/V2`
    (online GRun menu derived from `/dev/CMSSW_14_0_0/HLT/V187`
-   without CICADA-related triggers in order not to break compatibility with the L1T menu used in run-38363).
+   without CICADA-related triggers in order not to break compatibility with the L1T menu used in run-38363,
+   after migration of HCAL local reco to Alpaka).
+
+`240721_testCMSHLT3288`
+ ```
+ ./run_240721_testCMSHLT3288.sh out_240721_testCMSHLT3288_
+ ```
+ - Goal: quantify impact of CMSHLT-3288 on a recent GRun menu before HCAL-Alpaka updates.
+ - Same as `240720_testCMSHLT3288`, except for the HLT menu used.
+ - HLT menu: `/users/missirol/test/dev/CMSSW_14_0_0/CMSHLT_3288/Ref00/HLT/V2`
+   (online GRun menu derived from `/dev/CMSSW_14_0_0/HLT/V183`
+   without CICADA-related triggers in order not to break compatibility with the L1T menu used in run-38363,
+   before migration of HCAL local reco to Alpaka).
