@@ -266,3 +266,6 @@ Measurements
    (online GRun menu derived from `/dev/CMSSW_14_0_0/HLT/V183`
    without CICADA-related triggers in order not to break compatibility with the L1T menu used in run-38363,
    before migration of HCAL local reco to Alpaka).
+
+`240731_testCMSHLT3302`
+ - to be added

@@ -232,3 +232,7 @@ def customizeHLTforCMSHLT3288_test01(process):
     process.hltDoubletRecoveryPixelLayersAndRegions.layerList = layerPairs[:]
     process.hltDoubletRecoveryPixelLayersAndRegionsSerialSync.layerList = layerPairs[:]
     return process
+
+def customizeHLTforCMSHLT3302_baseline(process):
+    process = customizeHLTforThroughputMeasurements(process)
+    return process
