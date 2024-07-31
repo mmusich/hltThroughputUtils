@@ -9,7 +9,7 @@ ssh hilton-c2b02-44-01
 
 ```bash
 dirName=MY_TEST_DIR
-cmsswRel=CMSSW_14_0_6_MULTIARCHS
+cmsswRel=CMSSW_14_0_13_MULTIARCHS
 
 export SCRAM_ARCH=el8_amd64_gcc12
 source /cvmfs/cms.cern.ch/cmsset_default.sh
@@ -268,4 +268,8 @@ Measurements
    before migration of HCAL local reco to Alpaka).
 
 `240731_testCMSHLT3302`
- - to be added
+ ```
+ ./run_240731_testCMSHLT3302.sh out_240721_testCMSHLT3302_86748af
+ ```
+ - Goal: quantify impact of CMSHLT-3302.
+ - Input sample: run-383631, LS 476-479 (PU ~64).
