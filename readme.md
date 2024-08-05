@@ -30,20 +30,20 @@ cmsenv
 scram b
 cd "${OLDPWD}"
 
-git clone git@github.com:missirol/hltThroughputUtils.git -o missirol -b master
+git clone git@github.com:mmusich/hltThroughputUtils.git -o mmusich -b master
 
 cd hltThroughputUtils
 
-git clone git@github.com:missirol/patatrack-scripts.git -o missirol -b master                 -- patatrack-scripts
-git clone git@github.com:missirol/patatrack-scripts.git -o missirol -b hilton-c2b02-44-01_cpu -- patatrack-scripts.cpu
-git clone git@github.com:missirol/patatrack-scripts.git -o missirol -b hilton-c2b02-44-01_gpu -- patatrack-scripts.gpu
+git clone git@github.com:mmusich/patatrack-scripts.git -o mmusich -b master                 -- patatrack-scripts
+git clone git@github.com:mmusich/patatrack-scripts.git -o mmusich -b hilton-c2b02-44-01_cpu -- patatrack-scripts.cpu
+git clone git@github.com:mmusich/patatrack-scripts.git -o mmusich -b hilton-c2b02-44-01_gpu -- patatrack-scripts.gpu
 ```
 
 Measurements
 ============
 
 ```
-./run_240331.sh /users/missirol/test/dev/CMSSW_14_0_0/tmp/240331_ThroughputMeasurements/TimingTest_01/GRun/V3 test240331_GRunV79
+./run_240331.sh /users/mmusich/test/dev/CMSSW_14_0_0/tmp/240331_ThroughputMeasurements/TimingTest_01/GRun/V3 test240331_GRunV79
 ```
 
 `240414_testCMSHLT3156`
@@ -251,7 +251,7 @@ Measurements
  ```
  - Goal: quantify impact of CMSHLT-3288 on latest GRun menu (candidate v1.4 menu).
  - Same as `240719_testCMSHLT3288`, except for the HLT menu used.
- - HLT menu: `/users/missirol/test/dev/CMSSW_14_0_0/CMSHLT_3288/Ref01/HLT/V2`
+ - HLT menu: `/users/mmusich/test/dev/CMSSW_14_0_0/CMSHLT_3288/Ref01/HLT/V2`
    (online GRun menu derived from `/dev/CMSSW_14_0_0/HLT/V187`
    without CICADA-related triggers in order not to break compatibility with the L1T menu used in run-38363,
    after migration of HCAL local reco to Alpaka).
@@ -262,7 +262,7 @@ Measurements
  ```
  - Goal: quantify impact of CMSHLT-3288 on a recent GRun menu before HCAL-Alpaka updates.
  - Same as `240720_testCMSHLT3288`, except for the HLT menu used.
- - HLT menu: `/users/missirol/test/dev/CMSSW_14_0_0/CMSHLT_3288/Ref00/HLT/V2`
+ - HLT menu: `/users/mmusich/test/dev/CMSSW_14_0_0/CMSHLT_3288/Ref00/HLT/V2`
    (online GRun menu derived from `/dev/CMSSW_14_0_0/HLT/V183`
    without CICADA-related triggers in order not to break compatibility with the L1T menu used in run-38363,
    before migration of HCAL local reco to Alpaka).
